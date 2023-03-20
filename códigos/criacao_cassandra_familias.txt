@@ -1,0 +1,84 @@
+Reclamações 
+
+ |-- regiao: string (nullable = true)
+ |-- faixa_etaria: string (nullable = true)
+ |-- tempo_resposta: integer (nullable = true)
+ |-- nome_fantasia: string (nullable = true)
+ |-- assunto: string (nullable = true)
+ |-- grupo_problema: string (nullable = true)
+ |-- como_comprou_contratou: string (nullable = true)
+ |-- procurou_empresa: string (nullable = true)
+ |-- respondida: string (nullable = true)
+ |-- situacao: string (nullable = true)
+ |-- avaliacao_reclamacao: string (nullable = true)
+ |-- nota_do_consumidor: integer (nullable = true)
+ |-- ano_referencia: integer (nullable = true)
+
+CREATE TABLE IF NOT EXISTS trabalho_final.reclamacoes(
+    id uuid PRIMARY KEY,
+    regiao text,
+    faixa_etaria text,
+    tempo_resposta int,
+    nome_fantasia text,
+    assunto text,
+    grupo_problema text,
+    como_comprou_contratou text,
+    procurou_empresa text,
+    respondida text,
+    situacao text,
+    avaliacao_reclamacao text,
+    nota_do_consumidor int,
+    ano_referencia text
+);
+
+Ações
+
+ |-- date: date (nullable = true)
+ |-- instituicao_financeira: string (nullable = true)
+ |-- codigo_acao: string (nullable = true)
+ |-- open: double (nullable = true)
+ |-- high: double (nullable = true)
+ |-- low: double (nullable = true)
+ |-- close: double (nullable = true)
+ |-- tipo: string (nullable = true)
+
+CREATE TABLE IF NOT EXISTS trabalho_final.acoes(
+    id uuid PRIMARY KEY,
+    date date,
+    instituicao_financeira text,
+    codigo_acao text,
+    open double,
+    high double,
+    low double,
+    close double,
+    tipo text  
+);
+
+BNDES
+
+ |-- uf: string (nullable = true)
+ |-- data_da_contratacao: string (nullable = true)
+ |-- valor_da_operacao_em_reais: string (nullable = true)
+ |-- valor_desembolsado_reais: double (nullable = true)
+ |-- juros: double (nullable = true)
+ |-- prazo_carencia_meses: integer (nullable = true)
+ |-- inovacao: string (nullable = true)
+ |-- subsetor_bndes: string (nullable = true)
+ |-- porte_do_cliente: string (nullable = true)
+ |-- natureza_do_cliente: string (nullable = true)
+ |-- instituicao_financeira_credenciada: string (nullable = true)
+
+CREATE TABLE IF NOT EXISTS trabalho_final.bndes(
+    id uuid PRIMARY KEY,
+    uf text,
+    data_da_contratacao date,
+    valor_da_operacao_em_reais int,
+    valor_desembolsado_reais int,
+    juros double,
+    prazo_carencia_meses int,
+    inovacao text,		
+	  subsetor_bndes text,
+  	porte_do_cliente text,
+  	natureza_do_cliente text,
+	  instituicao_financeira_credenciada text
+);
